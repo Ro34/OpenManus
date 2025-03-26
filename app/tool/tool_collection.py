@@ -4,6 +4,7 @@ from typing import Any, Dict, List
 from app.exceptions import ToolError
 from app.tool.base import BaseTool, ToolFailure, ToolResult
 
+import json
 
 class ToolCollection:
     """A collection of defined tools."""
@@ -28,6 +29,12 @@ class ToolCollection:
         if not tool:
             return ToolFailure(error=f"Tool {name} is invalid")
         try:
+            if isinstance(tool_input, str):
+                try:
+                    tool_input = json.loads(tool_input)
+                except json.JSONDecodeError:
+                    return f"Invalid JSON in tool_input: {tool_input}"
+
             result = await tool(**tool_input)
             return result
         except ToolError as e:

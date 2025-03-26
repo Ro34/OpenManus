@@ -78,9 +78,9 @@ temperature = 0.0
 # password = "proxy-password"
 
 # Optional configuration, Search settings.
-# [search]
+[search]
 # Search engine for agent to use. Default is "Google", can be set to "Baidu" or "DuckDuckGo".
-#engine = "Google"
+engine = "Baidu"
 
 ## Sandbox configuration
 #[sandbox]
