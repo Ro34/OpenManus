@@ -6,6 +6,14 @@
 # max_tokens = 8192                           # Maximum number of tokens in the response
 # temperature = 0.0                           # Controls randomness
 
+
+[llm] #siliconflow
+model = "Qwen/QwQ-32B"
+base_url = "https://api.siliconflow.cn/v1/"
+api_key = "sk-jnvolpifgdlduvgcqwdkqudvtysmrijckjejmeqnvdefmjgq"
+max_tokens = 8192
+temperature = 0.0
+
 # [llm] #AZURE OPENAI:
 # api_type= 'azure'
 # model = "YOUR_MODEL_NAME" #"qwq:32b-mini"
@@ -15,13 +23,13 @@
 # temperature = 0.0
 # api_version="AZURE API VERSION" #"2024-08-01-preview"
 
-[llm] #OLLAMA:
-api_type = 'ollama'
-model = "qwq:32b"
-base_url = "http://localhost:11434/v1"
-api_key = "ollama"
-max_tokens = 4096
-temperature = 0.0
+# [llm] #OLLAMA:
+# api_type = 'ollama'
+# model = "llama3.2"
+# base_url = "http://localhost:11434/v1"
+# api_key = "ollama"
+# max_tokens = 4096
+# temperature = 0.0
 
 # Optional configuration for specific LLM models
 # [llm.vision]
@@ -31,13 +39,21 @@ temperature = 0.0
 # max_tokens = 8192                           # Maximum number of tokens in the response
 # temperature = 0.0                           # Controls randomness for vision model
 
-[llm.vision] #OLLAMA VISION:
-api_type = 'qwq:32b'
-model = "llama3.2-vision"
-base_url = "http://localhost:11434/v1"
-api_key = "ollama"
-max_tokens = 4096
+[llm.vision] #siliconflow
+model = "Qwen/Qwen2.5-VL-72B-Instruct"
+base_url = "https://api.siliconflow.cn/v1/"
+api_key = "sk-jnvolpifgdlduvgcqwdkqudvtysmrijckjejmeqnvdefmjgq"
+max_tokens = 8192
 temperature = 0.0
+
+
+# [llm.vision] #OLLAMA VISION:
+# api_type = 'ollama'
+# model = "llama3.2-vision"
+# base_url = "http://localhost:11434/v1"
+# api_key = "ollama"
+# max_tokens = 4096
+# temperature = 0.0
 
 # Optional configuration for specific browser configuration
 # [browser]
